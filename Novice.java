@@ -1,5 +1,4 @@
 public class Novice {
-    private int level;
     private int exp;
     private int hp;
     private Bag bag;
@@ -7,33 +6,25 @@ public class Novice {
 
     public Novice(String value) {
         this.bag = new Bag();
-        this.name = "Mario";
-        this.level = 1;
         this.exp = 0;
         this.hp = 0;
 
     }
 
-    public void upgradeExp() {
-        exp = this.exp + 1;
-        // System.out.println("Exp = " + this.exp);
+    public void increaseEXP(int exp) {
+        this.exp = +exp;
     }
 
-    public void upgradelevel() {
-        level = this.level + 1;
-        // System.out.println("Level = " + this.level);
+    public void increaseHP(int heal) {
+        hp = hp + heal;
     }
 
-    public void upgradeHp() {
-        hp = this.hp + 20;
-        // System.out.println("HP = " + this.hp);
+    public void decreaseHP(int damage) {
+        hp = hp - damage;
     }
 
     public void showInfo() {
-        Novice novice = new Novice("100");
         System.out.println();
-        System.out.println("Name = " + this.name);
-        System.out.println("Level = " + this.level);
         System.out.println("Exp = " + this.exp);
         System.out.println("HP = " + this.hp);
         System.out.println("-------------------------");
@@ -49,4 +40,25 @@ public class Novice {
         System.out.println();
     }
 
+    public int allEXP(int exp) {
+        return exp = 0;
+    }
+
+    public int thiefHP(int heal) {
+        return hp = 500;
+    }
+}
+
+class Thief extends Novice {
+
+    public Thief(String name) {
+        super(name);
+    }
+}
+
+class Magicion extends Novice {
+
+    public Magicion(String name) {
+        super(name);
+    }
 }

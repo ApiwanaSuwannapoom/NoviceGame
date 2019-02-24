@@ -8,19 +8,22 @@ public class Maingame {
         Boolean run;
         Scanner input = new Scanner(System.in);
         Novice novice = new Novice("100");
-        // Item items = new Item();
-        // Bag bag = new Bag();
 
         System.out.print("Please Enter your name: ");
         String name = input.nextLine();
         System.out.println("Welcome" + " " + name);
 
-        // System.out.println();
-        //
-
         funrun = true;
         run = true;
-
+        System.out.println("Select your job");
+        System.out.println("Enter 1 : Magicion");
+        System.out.println("Enter 2 : Thief");
+        int Select = input.nextInt();
+        if (Select == 1) {
+            Magicion magicion = new Magicion("Magicion");
+        } else if (Select == 2) {
+            Thief thief = new Thief("Thief");
+        }
         while (funrun) {
             System.out.println();
             System.out.println("Menu");

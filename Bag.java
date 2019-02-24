@@ -10,7 +10,7 @@ public class Bag {
     }
 
     public void addItem(String itemName) {
-        items.add(new Item(itemName));
+        items.add(new Item(itemName, 100, 0));
     }
 
     public void showItem() {
