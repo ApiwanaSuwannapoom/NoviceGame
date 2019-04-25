@@ -25,10 +25,4 @@ public class Monters {
     public int getExp() {
         return exp;
     }
-
-    public void showName() {
-
-        System.out.println("Name : " + this.name);
-        System.out.println();
-    }
 }

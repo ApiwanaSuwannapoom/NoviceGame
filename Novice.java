@@ -3,16 +3,20 @@ public class Novice {
     private int hp;
     private Bag bag;
     private String name;
+    private String type;
+    private int killMon;
     private int level;
     private int maxHp;
     private int maxExp;
     private boolean dead;
 
-    public Novice(String value) {
+    public Novice(String value, String type, int hp) {
         this.bag = new Bag();
+        this.killMon = 0;
         this.exp = 0;
-        this.hp = 100;
-        this.maxHp = 100;
+        this.hp = hp;
+        this.type = type;
+        this.maxHp = hp;
         this.maxExp = 5;
         this.level = 1;
         this.name = value;
@@ -21,6 +25,14 @@ public class Novice {
 
     public boolean getDead() {
         return dead;
+    }
+
+    public int getKillMon() {
+        return killMon;
+    }
+
+    public void setKillMon() {
+        this.killMon += 1;
     }
 
     public Bag getBag() {
@@ -57,35 +69,46 @@ public class Novice {
         hp = maxHp = maxHp + 10;
     }
 
-    public void showInfo() {
-        System.out.println("Name = " + this.name);
-        System.out.println("Level = " + this.level);
-        System.out.println("Exp = " + this.exp + "/" + this.maxExp);
-        System.out.println("HP = " + this.hp + "/" + this.maxHp);
-        System.out.println("-------------------------");
-
+    public String getName() {
+        return name;
     }
 
-    public void showItem() {
-        System.out.println();
-        System.out.println(bag.nut.getName() + "(" + bag.nut.getHp() + ") : " + bag.nut.getNumber());
-        System.out.println(bag.milk.getName() + "(" + bag.milk.getHp() + ") : " + bag.milk.getNumber());
-        System.out.println(bag.meat.getName() + "(" + bag.meat.getHp() + ") : " + bag.meat.getNumber());
-        System.out.println();
+    public String getType() {
+        return type;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public int getMaxExp() {
+        return maxExp;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
     }
 
 }
 
-class Thief extends Novice {
+class Lion extends Novice {
 
-    public Thief(String name) {
-        super(name);
+    public Lion(String name) {
+        super(name, "Lion", 150);
     }
 }
 
-class Magicion extends Novice {
+class Tiger extends Novice {
 
-    public Magicion(String name) {
-        super(name);
+    public Tiger(String name) {
+        super(name, "Tiger", 100);
     }
 }

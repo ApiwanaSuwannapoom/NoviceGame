@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Bag {
-    Item nut = new Item("Nut", 10, 5);
-    Item milk = new Item("milk", 20, 2);
-    Item meat = new Item("meat", 30, 1);
+    Item squirrelMeat = new Item("Squirrel Meat", 10, 5);
+    Item rabbitMeat = new Item("Rabbit Meat", 20, 2);
+    Item hamsterMeat = new Item("Hamster Meat", 30, 1);
 }
