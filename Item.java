@@ -1,44 +1,27 @@
 public class Item {
-    public String name;
-    public int hp;
-    public int exp;
-    public String milk;
-    public String nut;
-    public String meat;
+    private String name;
+    private int hp;
+    private int number;
 
-    public Item(String name, int exp, int hp) {
+    public Item(String name, int hp, int number) {
         this.name = name;
-        this.exp = exp;
         this.hp = hp;
+        this.number = number;
     }
 
-    public void showName() {
-
-        System.out.println();
-        System.out.println("Name : " + this.name);
-        System.out.println("Hp : " + this.hp);
-        System.out.println("Exp : " + this.exp);
-        System.out.println();
+    public String getName() {
+        return name;
     }
 
-    class Milk extends Item {
-
-        public Milk(String name) {
-            super(name, 0, 200);
-        }
+    public int getHp() {
+        return hp;
     }
 
-    class Nut extends Item {
-
-        public Nut(String name) {
-            super(name, 200, 0);
-        }
+    public int getNumber() {
+        return number;
     }
 
-    class Meat extends Item {
-
-        public Meat(String name) {
-            super(name, 200, 200);
-        }
+    public void setNumber(int number) {
+        this.number += number;
     }
 }

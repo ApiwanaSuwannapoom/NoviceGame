@@ -3,50 +3,77 @@ public class Novice {
     private int hp;
     private Bag bag;
     private String name;
+    private int level;
+    private int maxHp;
+    private int maxExp;
+    private boolean dead;
 
     public Novice(String value) {
         this.bag = new Bag();
         this.exp = 0;
-        this.hp = 0;
+        this.hp = 100;
+        this.maxHp = 100;
+        this.maxExp = 5;
+        this.level = 1;
+        this.name = value;
+        this.dead = false;
+    }
 
+    public boolean getDead() {
+        return dead;
+    }
+
+    public Bag getBag() {
+        return bag;
     }
 
     public void increaseEXP(int exp) {
-        this.exp = +exp;
+        this.exp += exp;
+        while (this.exp >= maxExp) {
+            this.exp = this.exp - maxExp;
+            levelUp();
+        }
     }
 
-    public void increaseHP(int heal) {
-        hp = hp + heal;
+    public boolean increaseHP(int heal) {
+        if (hp < maxHp) {
+            hp = hp + heal;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void decreaseHP(int damage) {
         hp = hp - damage;
+        if (hp <= 0) {
+            dead = true;
+        }
+    }
+
+    public void levelUp() {
+        level = level + 1;
+        maxExp = maxExp + 5;
+        hp = maxHp = maxHp + 10;
     }
 
     public void showInfo() {
-        System.out.println();
-        System.out.println("Exp = " + this.exp);
-        System.out.println("HP = " + this.hp);
+        System.out.println("Name = " + this.name);
+        System.out.println("Level = " + this.level);
+        System.out.println("Exp = " + this.exp + "/" + this.maxExp);
+        System.out.println("HP = " + this.hp + "/" + this.maxHp);
         System.out.println("-------------------------");
 
     }
 
-    public void addItem(String itemName) {
-        this.bag.addItem(itemName);
-    }
-
     public void showItem() {
-        this.bag.showItem();
+        System.out.println();
+        System.out.println(bag.nut.getName() + "(" + bag.nut.getHp() + ") : " + bag.nut.getNumber());
+        System.out.println(bag.milk.getName() + "(" + bag.milk.getHp() + ") : " + bag.milk.getNumber());
+        System.out.println(bag.meat.getName() + "(" + bag.meat.getHp() + ") : " + bag.meat.getNumber());
         System.out.println();
     }
 
-    public int allEXP(int exp) {
-        return exp = 0;
-    }
-
-    public int thiefHP(int heal) {
-        return hp = 500;
-    }
 }
 
 class Thief extends Novice {

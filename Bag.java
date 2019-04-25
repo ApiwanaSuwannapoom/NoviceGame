@@ -1,22 +1,7 @@
 import java.util.ArrayList;
 
 public class Bag {
-    private ArrayList<Item> items;
-    private int limit;
-
-    public Bag() {
-        items = new ArrayList<Item>();
-        limit = 10;
-    }
-
-    public void addItem(String itemName) {
-        items.add(new Item(itemName, 100, 0));
-    }
-
-    public void showItem() {
-        for (int i = 0; i < items.size(); i++) {
-            items.get(i).showName();
-        }
-    }
-
+    Item nut = new Item("Nut", 10, 5);
+    Item milk = new Item("milk", 20, 2);
+    Item meat = new Item("meat", 30, 1);
 }
